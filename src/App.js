@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person';
 
 class App extends Component {
+  clickHandler = () => {
+    console.log('I was clicked');
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>Persons : </h1>
-        <Person name='Bryan' age={34}/>
-        <Person name='John' age={39}/>
+        <h2>Event</h2>
+        <button onClick={this.clickHandler}>ClickMe</button>
       </div>
     );
   }
