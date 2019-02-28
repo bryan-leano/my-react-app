@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
+import Child from './Child';
 
 class App extends Component {
-  state = {msg : 'hello'};
-  
-  clickHandler = () => {
-    if (this.state.msg === 'hello') {
-      this.setState({msg : 'world'});
-    } else {
-      this.setState({msg : 'hello'});
-    }
+
+  myHandler = () => {
+    console.log('This is App.myHandler');
   }
 
   render() {
     return (
       <div className="App">
-        <h1>{this.state.msg}</h1>
-        <button onClick={this.clickHandler}>Click Me</button>
+        <Child someFunction={this.myHandler}/>
       </div>
-    );
+    )
   }
 }
 
