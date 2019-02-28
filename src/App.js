@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  state = {msg : 'hello'};
+  
   clickHandler = () => {
-    console.log('I was clicked');
+    if (this.state.msg === 'hello') {
+      this.setState({msg : 'world'});
+    } else {
+      this.setState({msg : 'hello'});
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <h2>Event</h2>
-        <button onClick={this.clickHandler}>ClickMe</button>
+        <h1>{this.state.msg}</h1>
+        <button onClick={this.clickHandler}>Click Me</button>
       </div>
     );
   }
